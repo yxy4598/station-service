@@ -1,0 +1,15 @@
+/* pages/profile/profile.wxss */
+
+movable-area {
+  width: 750rpx;
+  height: 400rpx;
+  background: #ABABAB;
+}
+
+movable-view {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100rpx;
+  background: #f40;
+  direction: "all";
+}

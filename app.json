@@ -1,13 +1,40 @@
 {
   "pages":[
-    "pages/home/home"
+    "pages/home/home",
+    "pages/demo/index",
+    "pages/profile/profile"
+    
+    
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "高铁站服务",
     "navigationBarTextStyle":"black"
   },
-  "style": "v2",
+  "tabBar": {
+    "color": "#2c2c2c",
+    "selectedColor": "#1296db",
+    "list": [
+      {
+      "pagePath": "pages/home/home",
+      "text": "首页",
+      "iconPath": "assets/home.png",
+      "selectedIconPath": "assets/home_active.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "assets/profile.png",
+        "selectedIconPath": "assets/profile_active.png"
+      },
+      {
+        "pagePath": "pages/demo/index",
+        "text": "test",
+        "iconPath": "assets/profile.png",
+        "selectedIconPath": "assets/profile_active.png"
+      }
+    ]
+  },
   "sitemapLocation": "sitemap.json"
 }

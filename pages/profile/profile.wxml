@@ -1,0 +1,11 @@
+<!--pages/profile/profile.wxml-->
+
+
+
+<movable-area scale-area class="seat-scale" >
+    <movable-view animation out-of-bounds scale-max="2" scale-min="1" direction="all"
+    bindchange="tap"
+    >
+    
+    </movable-view>
+</movable-area>

@@ -1,2 +1,63 @@
 <!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
+
+
+<view>
+  <!-- <block wx:for="{{seats}}" wx:key="id">
+    <view>{{item.id}}</view>
+  </block> -->
+
+  <view class="seat">
+    
+    <view class="seat-nav">
+      <van-dropdown-menu active-color="#1296db">
+        <van-dropdown-item value="{{ key1 }}" options="{{ province }}" bind:tap="handleProvince"/>
+        <van-dropdown-item value="{{ value2 }}" options="{{ option2 }}" bind:change="handleProvince"/>
+        <van-dropdown-item value="{{ value3 }}" options="{{ option3 }}" />
+        <van-dropdown-item value="{{ value4 }}" options="{{ option4 }}" />
+      </van-dropdown-menu>
+    </view>
+
+    <view class="seat-area">
+      <view class="seat-title">座位区域</view>
+        <view class="row {{flag?'scaleRow':''}}">
+            <text>1</text>
+            <text>2</text>
+            <text>3</text>
+            <text>4</text>
+            <text>5</text>
+            <text>6</text>
+            <text>7</text>
+            <text>8</text>
+        </view>
+        <movable-area scale-area class="scale-area">
+          <movable-view 
+            class="scale-view"
+            direction="horizontal"
+            out-of-bounds
+            friction="1"
+            scale="{{isScale}}"
+            scale-max="2"
+            scale-min="1"
+            animation
+            bindscale="handleSeatScale"
+            bindchange="handleSeatChange"
+          >
+            <view class="seat-content">
+              <view
+                wx:for="{{seats}}"
+                wx:key="index"
+                wx:for-item="items"
+              >
+                <view class="seat-content-image" wx:if="{{index<12}}">
+                  <image src="/assets/seat.png" mode="aspectFit" class="seat-image"/>
+                </view>
+              </view>
+            </view>
+          </movable-view>
+        </movable-area>
+    </view>
+      
+  </view>
+</view>
+
+
