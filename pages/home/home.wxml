@@ -7,15 +7,7 @@
   </block> -->
 
   <view class="seat">
-    
-    <view class="seat-nav">
-      <van-dropdown-menu active-color="#1296db">
-        <van-dropdown-item value="{{ key1 }}" options="{{ province }}" bind:tap="handleProvince"/>
-        <van-dropdown-item value="{{ value2 }}" options="{{ option2 }}" bind:change="handleProvince"/>
-        <van-dropdown-item value="{{ value3 }}" options="{{ option3 }}" />
-        <van-dropdown-item value="{{ value4 }}" options="{{ option4 }}" />
-      </van-dropdown-menu>
-    </view>
+    <region-navbar/>
 
     <view class="seat-area">
       <view class="seat-title">座位区域</view>

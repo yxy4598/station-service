@@ -1,4 +1,4 @@
-const BASE_URL = "http://nint.ltd:8531"
+const BASE_URL = "https://nint.ltd/api"
 
 class XYRequest {
   request(url, method, params) {
