@@ -30,7 +30,7 @@
                 wx:key="index"
                 wx:for-item="items"
               >
-                <view class="seat-content-image" wx:if="{{index<12}}">
+                <view class="seat-content-image" wx:if="{{index<36}}">
                   <image src="/assets/seat.png" mode="aspectFit" class="seat-image"/>
                 </view>
               </view>

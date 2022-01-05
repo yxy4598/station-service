@@ -25,6 +25,8 @@ Component({
     value2: '',
     value3: '',
     value4: '',
+
+    seats: []
   },
 
   
@@ -175,8 +177,11 @@ Component({
               let seats = selectPartition(data, items[0].district)
               this.setData({
                 partition: partitions,
-                value4: partitions[0].value
+                value4: partitions[0].value,
+
+                seats: seats
               })
+              this.triggerEvent('cityEvent', {seats: this.data.seats})
             }else {
               this.setData({
                 partition: {text: '待填充', value: 0},
@@ -186,6 +191,7 @@ Component({
           })
 
         })
+        
     },
     handleStation(options){
       xyRequest.get("/seat",

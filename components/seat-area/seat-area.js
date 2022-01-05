@@ -6,28 +6,36 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    seats: {
+      type: Array,
+      value: [{id: 1}],
+      observer: (newVal, oldVal) => {
+        console.log(newVal, oldVal);
+      }
+    },
+    titles: {
+      type:String,
+      observer: (newVal, oldVal) => {
+        console.log(newVal, oldVal);
+      }
+    }
   },
 
   /**
    * 组件的初始数据
    */
   data: {
-    seats: [],
+    // seats: [],
     isScale: false
   },
   created: function() {
-    xyRequest.get("/seat", { stationId: 1 }).then(res => {
-      this.setData({
-        seats: res.data.data
-      })
-    })
+    
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
-
+    
   }
 })

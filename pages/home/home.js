@@ -7,7 +7,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    seats: []
+  },
+  handleCityEvent(e) {
+    console.log(e);
+    this.setData({
+      seats: e.detail.seats
+    })
   },
   
 
