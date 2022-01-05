@@ -9,46 +9,8 @@
   <view class="seat">
     <region-navbar/>
 
-    <view class="seat-area">
-      <view class="seat-title">座位区域</view>
-        <view class="row {{flag?'scaleRow':''}}">
-            <text>1</text>
-            <text>2</text>
-            <text>3</text>
-            <text>4</text>
-            <text>5</text>
-            <text>6</text>
-            <text>7</text>
-            <text>8</text>
-        </view>
-        <movable-area scale-area class="scale-area">
-          <movable-view 
-            class="scale-view"
-            direction="horizontal"
-            out-of-bounds
-            friction="1"
-            scale="{{isScale}}"
-            scale-max="2"
-            scale-min="1"
-            animation
-            bindscale="handleSeatScale"
-            bindchange="handleSeatChange"
-          >
-            <view class="seat-content">
-              <view
-                wx:for="{{seats}}"
-                wx:key="index"
-                wx:for-item="items"
-              >
-                <view class="seat-content-image" wx:if="{{index<12}}">
-                  <image src="/assets/seat.png" mode="aspectFit" class="seat-image"/>
-                </view>
-              </view>
-            </view>
-          </movable-view>
-        </movable-area>
-    </view>
-      
+    
+    <seat-area />
   </view>
 </view>
 

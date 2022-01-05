@@ -7,8 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    seats: [],
-    isScale: false
+    
   },
   
 
@@ -16,11 +15,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    xyRequest.get("/seat", { stationId: 1 }).then(res => {
-      this.setData({
-        seats: res.data.data
-      })
-    })
 
 
     // wx.getLocation({

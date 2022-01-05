@@ -1,7 +1,6 @@
 {
   "usingComponents": {
-    "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
-    "van-dropdown-item": "@vant/weapp/dropdown-item/index",
-    "region-navbar": "/components/region-navbar/region-navbar"
+    "region-navbar": "/components/region-navbar/region-navbar",
+    "seat-area": "/components/seat-area/seat-area"
   }
 } 
