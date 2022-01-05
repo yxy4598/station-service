@@ -1,6 +1,10 @@
 // components/region-navbar.js
 
 import xyRequest from "../../service/index"
+import {
+  uniqueFunc,
+  selectPartition
+} from "../../utils/tools"
 Component({
   /**
    * 组件的属性列表
@@ -25,6 +29,7 @@ Component({
 
   
   created: function() {
+    //省份请求
     xyRequest.get("/region/province").then(res => {
       const data = res.data.data;
       let provinces = data.map((item, index) => {
@@ -34,7 +39,7 @@ Component({
         province: provinces,
         value1: provinces[14].value
       })
-
+      //城市请求
       xyRequest.get("/region/city",
       {
         provinceId: this.data.value1
@@ -49,6 +54,7 @@ Component({
           city: cities,
           value2: cities[0].value
         })
+        //高铁站请求
         xyRequest.get("/station/region/" + this.data.value2,
         ).then(res=>{
           const data = res.data.data;
@@ -59,16 +65,30 @@ Component({
             station: stations,
             value3: stations[0].value
           })
-
+          //座位分区请求
           xyRequest.get("/seat",
-            {stationId: 1}
+            {stationId: this.data.value3}
           ).then(res => {
-            console.log(res.data);
             const data = res.data.data;
-            let partitions = data.map((item, index) => {
-              return Object.assign({}, {'text': item.district, value: item.id})
-            })
-            console.log(partitions);
+            if(data.length) {
+              let items = uniqueFunc(data, "district");
+              let partitions = items.map((item, index) => {
+                return Object.assign({}, {'text': item.district, value: item.id})
+              })
+              
+              this.setData({
+                partition: partitions,
+                value4: partitions[0].value,
+
+                //存放座位
+              })
+            }else {
+              this.setData({
+                partition: {text: '待填充', value: 0},
+                value4: 0
+              })
+            }
+            
           })
 
         })
@@ -105,6 +125,29 @@ Component({
             station: stations,
             value3: stations[0].value
           })
+
+          xyRequest.get("/seat",
+            {stationId: this.data.value3}
+          ).then(res => {
+            const data = res.data.data;
+            if(data.length) {
+              let items = uniqueFunc(data, "district");
+              let partitions = items.map((item, index) => {
+                return Object.assign({}, {'text': item.district, value: item.id})
+              })
+
+              
+              this.setData({
+                partition: partitions,
+                value4: partitions[0].value
+              })
+            }else {
+              this.setData({
+                partition: {text: '待填充', value: 0},
+                value4: 0
+              })
+            }
+          })
         })
       })
     },
@@ -119,10 +162,53 @@ Component({
             station: stations,
             value3: stations[0].value
           })
+
+          xyRequest.get("/seat",
+            {stationId: this.data.value3}
+          ).then(res => {
+            const data = res.data.data;
+            if(data.length) {
+              let items = uniqueFunc(data, "district");
+              let partitions = items.map((item, index) => {
+                return Object.assign({}, {'text': item.district, value: item.id})
+              })
+              let seats = selectPartition(data, items[0].district)
+              this.setData({
+                partition: partitions,
+                value4: partitions[0].value
+              })
+            }else {
+              this.setData({
+                partition: {text: '待填充', value: 0},
+                value4: 0
+              })
+            }
+          })
+
         })
     },
     handleStation(options){
-      console.log(options.detail);
+      xyRequest.get("/seat",
+            {stationId: options.detail}
+          ).then(res => {
+            const data = res.data.data;
+
+            if(data.length) {
+              let items = uniqueFunc(data, "district");
+              let partitions = items.map((item, index) => {
+                return Object.assign({}, {'text': item.district, value: item.id})
+              })
+              this.setData({
+                partition: partitions,
+                value4: partitions[0].value
+              })
+            }else {
+              this.setData({
+                partition: {text: '待填充', value: 0},
+                value4: 0
+              })
+            }
+          })
     }
   }
 })
