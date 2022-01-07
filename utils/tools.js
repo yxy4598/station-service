@@ -11,3 +11,11 @@ export function selectPartition(arr, title) {
       return Object.assign({}, {'text': item.district, value: item.id})
   })
 }
+
+export function selectTitle(arr, id) {
+  for(const item of arr) {
+    if(item.value == id) {
+      return item.text
+    }
+  }
+}

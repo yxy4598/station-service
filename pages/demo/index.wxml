@@ -22,8 +22,8 @@
                             <view wx:for="{{items}}" wx:key wx:for-index="key" wx:for-item="item" class="item"
                                   bindtap="tap" data-row="{{keys}}" data-col="{{key}}" data-price="100"
                                   wx:if="{{key<6}}">
-                                <image src="/assets/zuowei1.png" wx:if="{{!item.chooseFlag}}"/>
-                                <image src="/assets/yixuan.png" wx:if="{{item.chooseFlag}}"/>
+                                <image src="/assets/seat.png" wx:if="{{!item.chooseFlag}}"/>
+                                <image src="/assets/seat_allow.png" wx:if="{{item.chooseFlag}}"/>
                             </view>
                         </view>
                         <view wx:for="{{greenPrice}}" wx:key wx:for-index="keys" class="zuowei" wx:for-item="items"
@@ -31,8 +31,8 @@
                             <view wx:for="{{items}}" wx:key wx:for-index="key" wx:for-item="item" class="item"
                                   bindtap="tap" data-row="{{keys}}" data-col="{{key}}" data-price="100"
                                   wx:if="{{key<4}}">
-                                <image src="/assets/zuowei1.png" wx:if="{{!item.chooseFlag}}"/>
-                                <image src="/assets/yixuan.png" wx:if="{{item.chooseFlag}}"/>
+                                <image src="/assets/seat.png" wx:if="{{!item.chooseFlag}}"/>
+                                <image src="/assets/seat_allow.png" wx:if="{{item.chooseFlag}}"/>
                             </view>
                         </view>
                         <view wx:for="{{greenPrice}}" wx:key wx:for-index="keys" class="zuowei" wx:for-item="items"
@@ -40,8 +40,8 @@
                             <view wx:for="{{items}}" wx:key wx:for-index="key" wx:for-item="item" class="item"
                                   bindtap="tap" data-row="{{keys}}" data-col="{{key}}" data-price="100"
                                   wx:if="{{key<5}}">
-                                <image src="/assets/zuowei1.png" wx:if="{{!item.chooseFlag}}"/>
-                                <image src="/assets/yixuan.png" wx:if="{{item.chooseFlag}}"/>
+                                <image src="/assets/seat.png" wx:if="{{!item.chooseFlag}}"/>
+                                <image src="/assets/seat_allow.png" wx:if="{{item.chooseFlag}}"/>
                             </view>
                         </view>
                         <view wx:for="{{greenPrice}}" wx:key wx:for-index="keys" class="zuowei" wx:for-item="items"
@@ -49,8 +49,8 @@
                             <view wx:for="{{items}}" wx:key wx:for-index="key" wx:for-item="item" class="item"
                                   bindtap="tap" data-row="{{keys}}" data-col="{{key}}" data-price="100"
                                   wx:if="{{key<6}}">
-                                <image src="/assets/zuowei1.png" wx:if="{{!item.chooseFlag}}"/>
-                                <image src="/assets/yixuan.png" wx:if="{{item.chooseFlag}}"/>
+                                <image src="/assets/seat.png" wx:if="{{!item.chooseFlag}}"/>
+                                <image src="/assets/seat_allow.png" wx:if="{{item.chooseFlag}}"/>
                             </view>
                         </view>
                     </view>
@@ -62,8 +62,8 @@
                             <view wx:for="{{items}}" wx:key wx:for-index="key" wx:for-item="item" class="item"
                                   bindtap="tap" data-row="{{keys}}" data-col="{{key}}" data-price="120"
                                   wx:if="{{key>=6&&key<23}}">
-                                <image src="/assets/zuowei1.png" wx:if="{{!item.chooseFlag}}"/>
-                                <image src="/assets/yixuan.png" wx:if="{{item.chooseFlag}}"/>
+                                <image src="/assets/seat.png" wx:if="{{!item.chooseFlag}}"/>
+                                <image src="/assets/seat_allow.png" wx:if="{{item.chooseFlag}}"/>
                             </view>
                         </view>
                         <view wx:for="{{greenPrice}}" wx:key wx:for-index="keys" class="zuowei" wx:for-item="items"
@@ -71,8 +71,8 @@
                             <view wx:for="{{items}}" wx:key wx:for-index="key" wx:for-item="item" class="item"
                                   bindtap="tap" data-row="{{keys}}" data-col="{{key}}" data-price="120"
                                   wx:if="{{key>=4&&key<21}}">
-                                <image src="/assets/zuowei1.png" wx:if="{{!item.chooseFlag}}"/>
-                                <image src="/assets/yixuan.png" wx:if="{{item.chooseFlag}}"/>
+                                <image src="/assets/seat.png" wx:if="{{!item.chooseFlag}}"/>
+                                <image src="/assets/seat_allow.png" wx:if="{{item.chooseFlag}}"/>
                             </view>
                         </view>
                         <view wx:for="{{greenPrice}}" wx:key wx:for-index="keys" class="zuowei" wx:for-item="items"
@@ -80,16 +80,16 @@
                             <view wx:for="{{items}}" wx:key wx:for-index="key" wx:for-item="item" class="item"
                                   bindtap="tap" data-row="{{keys}}" data-col="{{key}}" data-price="120"
                                   wx:if="{{key>=6&&key<21}}">
-                                <image src="/assets/zuowei1.png" wx:if="{{!item.chooseFlag}}"/>
-                                <image src="/assets/yixuan.png" wx:if="{{item.chooseFlag}}"/>
+                                <image src="/assets/seat.png" wx:if="{{!item.chooseFlag}}"/>
+                                <image src="/assets/seat_allow.png" wx:if="{{item.chooseFlag}}"/>
                             </view>
                         </view>
                         <view wx:for="{{greenPrice}}" wx:key wx:for-index="keys" class="zuowei" wx:for-item="items"
                               wx:if="{{keys==7}}">
                             <view wx:for="{{items}}" wx:key wx:for-index="key" wx:for-item="item" class="item"
                                   bindtap="tap" data-row="{{keys}}" data-col="{{key}}" data-price="120">
-                                <image src="/assets/zuowei1.png" wx:if="{{!item.chooseFlag}}"/>
-                                <image src="/assets/yixuan.png" wx:if="{{item.chooseFlag}}"/>
+                                <image src="/assets/seat.png" wx:if="{{!item.chooseFlag}}"/>
+                                <image src="/assets/seat_allow.png" wx:if="{{item.chooseFlag}}"/>
                             </view>
                         </view>
                     </view>
@@ -101,8 +101,8 @@
                             <view wx:for="{{items}}" wx:key wx:for-index="key" wx:for-item="item" class="item"
                                   bindtap="tap" data-row="{{keys}}" data-col="{{key}}" data-price="100"
                                   wx:if="{{key>=23}}">
-                                <image src="/assets/zuowei1.png" wx:if="{{!item.chooseFlag}}"/>
-                                <image src="/assets/yixuan.png" wx:if="{{item.chooseFlag}}"/>
+                                <image src="/assets/seat.png" wx:if="{{!item.chooseFlag}}"/>
+                                <image src="/assets/seat_allow.png" wx:if="{{item.chooseFlag}}"/>
                             </view>
                         </view>
                         <view wx:for="{{greenPrice}}" wx:key wx:for-index="keys" class="zuowei" wx:for-item="items"
@@ -110,8 +110,8 @@
                             <view wx:for="{{items}}" wx:key wx:for-index="key" wx:for-item="item" class="item"
                                   bindtap="tap" data-row="{{keys}}" data-col="{{key}}" data-price="100"
                                   wx:if="{{key>=21}}">
-                                <image src="/assets/zuowei1.png" wx:if="{{!item.chooseFlag}}"/>
-                                <image src="/assets/yixuan.png" wx:if="{{item.chooseFlag}}"/>
+                                <image src="/assets/seat.png" wx:if="{{!item.chooseFlag}}"/>
+                                <image src="/assets/seat_allow.png" wx:if="{{item.chooseFlag}}"/>
                             </view>
                         </view>
                         <view wx:for="{{greenPrice}}" wx:key wx:for-index="keys" class="zuowei" wx:for-item="items"
@@ -119,8 +119,8 @@
                             <view wx:for="{{items}}" wx:key wx:for-index="key" wx:for-item="item" class="item"
                                   bindtap="tap" data-row="{{keys}}" data-col="{{key}}" data-price="100"
                                   wx:if="{{key>=21}}">
-                                <image src="/assets/zuowei1.png" wx:if="{{!item.chooseFlag}}"/>
-                                <image src="/assets/yixuan.png" wx:if="{{item.chooseFlag}}"/>
+                                <image src="/assets/seat.png" wx:if="{{!item.chooseFlag}}"/>
+                                <image src="/assets/seat_allow.png" wx:if="{{item.chooseFlag}}"/>
                             </view>
                         </view>
                         <view wx:for="{{greenPrice}}" wx:key wx:for-index="keys" class="zuowei" wx:for-item="items"
@@ -128,8 +128,8 @@
                             <view wx:for="{{items}}" wx:key wx:for-index="key" wx:for-item="item" class="item"
                                   bindtap="tap" data-row="{{keys}}" data-col="{{key}}" data-price="100"
                                   wx:if="{{key>=22}}">
-                                <image src="/assets/zuowei1.png" wx:if="{{!item.chooseFlag}}"/>
-                                <image src="/assets/yixuan.png" wx:if="{{item.chooseFlag}}"/>
+                                <image src="/assets/seat.png" wx:if="{{!item.chooseFlag}}"/>
+                                <image src="/assets/seat_allow.png" wx:if="{{item.chooseFlag}}"/>
                             </view>
                         </view>
                     </view>
@@ -138,15 +138,15 @@
         </movable-area>
         <view class="seat-state">
             <view>
-                <image src="/assets/zuowei1.png"/>
+                <image src="/assets/seat.png"/>
                 <text>可选</text>
             </view>
             <view>
-                <image src="/assets/yiyuyue.png"/>
+                <image src="/assets/seat_unallow.png"/>
                 <text>已预约</text>
             </view>
             <view>
-                <image src="/assets/yixuan.png"/>
+                <image src="/assets/seat_allow.png"/>
                 <text>已选</text>
             </view>
         </view>

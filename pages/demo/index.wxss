@@ -105,7 +105,7 @@ movable-view {
     width: 22rpx;
     height: 18rpx;
     padding: 7rpx 1rpx;
-}
+} 
 
 .item image {
     position: absolute;

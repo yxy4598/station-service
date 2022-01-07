@@ -2,13 +2,10 @@
 
 
 <view>
-  <!-- <block wx:for="{{seats}}" wx:key="id">
-    <view>{{item.id}}</view>
-  </block> -->
 
   <view class="seat">
     <region-navbar bind:cityEvent="handleCityEvent"/>
-    <seat-area seats="{{seats}}" titles="哈哈哈"/>
+    <seat-area seats="{{seats}}"/>
   </view>
 </view>
 

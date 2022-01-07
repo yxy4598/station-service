@@ -1,11 +1,6 @@
 <!--pages/profile/profile.wxml-->
+<view class="userinfo-avatar">
+    <open-data type="userAvatarUrl"></open-data>
+</view>
 
-
-
-<movable-area scale-area class="seat-scale" >
-    <movable-view animation out-of-bounds scale-max="2" scale-min="1" direction="all"
-    bindchange="tap"
-    >
-    
-    </movable-view>
-</movable-area>
+<open-data type="userNickName"></open-data>

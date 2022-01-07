@@ -9,7 +9,7 @@
     ]
   },
   "setting": {
-    "urlCheck": false,
+    "urlCheck": true,
     "es6": true,
     "enhance": true,
     "postcss": true,
@@ -38,6 +38,8 @@
     "enableEngineNative": false,
     "useIsolateContext": false,
     "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
     "minifyWXSS": true,
     "disableUseStrict": false,
     "minifyWXML": true,
@@ -45,7 +47,7 @@
     "useCompilerPlugins": false
   },
   "compileType": "miniprogram",
-  "libVersion": "2.17.0",
+  "libVersion": "2.19.6",
   "appid": "wx36152784ca45e2f6",
   "projectname": "station-service",
   "debugOptions": {

@@ -34,7 +34,7 @@ Page({
                 }
             })
         })
-        console.log(this.data.greenPrice)
+        // console.log(this.data.greenPrice)
         this.getHeigth()
     },
     tap(e) {
@@ -57,7 +57,8 @@ Page({
             return
         }
         this.data.greenPrice[row][col].chooseFlag = !this.data.greenPrice[row][col].chooseFlag
-        console.log(x + '排', y + '座')
+        // console.log(this.data.greenPrice);
+        // console.log(x + '排', y + '座')
         let seat = {
             x: x,
             y: y,
@@ -76,7 +77,7 @@ Page({
             }
         }
 
-        console.log(selectList, 55)
+        // console.log(selectList, 55)
         let totalPrice = 0;
         selectList.forEach((item, index) => {
             totalPrice += item.price
@@ -101,33 +102,33 @@ Page({
             })
         })
     },
-    delete(e) {
-        console.log(e.currentTarget.dataset.index)
-        let index = e.currentTarget.dataset.index
-        let selectList = this.data.selectList
-        let greenPrice = this.data.greenPrice
-        let id = selectList[index].id
-        console.log(id, 6)
-        selectList.splice(index, 1)
-        this.data.greenPrice.forEach((items, i) => {
-            items.forEach((item, j) => {
-                if (item.id == id) {
-                    item.chooseFlag = false
-                }
-            })
-        })
-        let totalPrice = 0;
-        selectList.forEach((item, index) => {
-            totalPrice += item.price
-        })
-        this.setData({
-            totalPrice,
-            selectList,
-            greenPrice
-        })
-    },
+    // delete(e) {
+    //     console.log(e.currentTarget.dataset.index)
+    //     let index = e.currentTarget.dataset.index
+    //     let selectList = this.data.selectList
+    //     let greenPrice = this.data.greenPrice
+    //     let id = selectList[index].id
+    //     console.log(id, 6)
+    //     selectList.splice(index, 1)
+    //     this.data.greenPrice.forEach((items, i) => {
+    //         items.forEach((item, j) => {
+    //             if (item.id == id) {
+    //                 item.chooseFlag = false
+    //             }
+    //         })
+    //     })
+    //     let totalPrice = 0;
+    //     selectList.forEach((item, index) => {
+    //         totalPrice += item.price
+    //     })
+    //     this.setData({
+    //         totalPrice,
+    //         selectList,
+    //         greenPrice
+    //     })
+    // },
     scaleEvent(e) {
-        console.log(e)
+        // console.log(e)
         let scaleNum = e.detail.scale;
         //console.log(scaleNum)
         if (scaleNum == 1) {
@@ -143,17 +144,11 @@ Page({
 
     },
     move(e) {
-        console.log(e.detail.x)
+        // console.log(e.detail.x)
         let x = e.detail.x
         let leftX = this.data.leftX
         this.setData({
             leftX: 75
-        })
-    },
-    toOrder() {
-        console.log(1)
-        wx.navigateTo({
-            url: '../yuyueOrder/index'
         })
     }
 })

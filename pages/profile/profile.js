@@ -1,8 +1,6 @@
 // pages/profile/profile.js
 Page({
-  tap: function(source) {
-    console.log(source);
-  },
+  
   /**
    * 页面的初始数据
    */

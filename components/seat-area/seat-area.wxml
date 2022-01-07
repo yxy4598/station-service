@@ -1,7 +1,7 @@
 <!--components/seat-area/seat-area.wxml-->
 <view class="seat-area">
       <view class="seat-title">座位区域</view>
-        <view class="row {{flag?'scaleRow':''}}">
+        <view class="row {{isScale?'scaleRow':''}}">
             <text>1</text>
             <text>2</text>
             <text>3</text>
@@ -10,6 +10,10 @@
             <text>6</text>
             <text>7</text>
             <text>8</text>
+            <text>9</text>
+            <text>10</text>
+            <text>11</text>
+            <text>12</text>
         </view>
         <movable-area scale-area class="scale-area">
           <movable-view 
@@ -17,24 +21,201 @@
             direction="horizontal"
             out-of-bounds
             friction="1"
-            scale="{{isScale}}"
+            scale="true"
             scale-max="2"
             scale-min="1"
             animation
             bindscale="handleSeatScale"
             bindchange="handleSeatChange"
+            scale-value="{{scaleValue}}"
           >
-            <view class="seat-content">
-              <view
-                wx:for="{{seats}}"
-                wx:key="index"
-                wx:for-item="items"
-              >
+            <!-- <view class="seat-content">
+              <view  wx:for="{{seats}}" wx:key="index" wx:for-item="items">
                 <view class="seat-content-image" wx:if="{{index<36}}">
                   <image src="/assets/seat.png" mode="aspectFit" class="seat-image"/>
                 </view>
               </view>
+            </view> -->
+            <view class="box">
+              <view class="rowX rowX-1">
+                <block wx:for="{{seats}}" wx:key="index" wx:for-item="items">
+                  <view class="seat-content-image" wx:if="{{items.rowX == 1}}" bind:tap="seatTap" data-row="{{items.rowX}}"   data-col="{{items.rowY}}" data-chooseflag="{{items.chooseFlag}}">
+                    <!-- <image src="/assets/seat_allow.png" mode="aspectFit" class="seat-image"/> -->
+                    <image src="/assets/seat.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 0}}"/>
+                    <image src="/assets/seat_allow.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 1 }}"/>
+                    <image src="/assets/seat_unallow.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 2 }}"/>
+                  </view>
+                </block>
+              </view>
+
+              <view class="rowX rowX-2">
+                <block wx:for="{{seats}}" wx:key="index" wx:for-item="items">
+                  <view class="seat-content-image" wx:if="{{items.rowX == 2}}" bind:tap="seatTap" data-row="{{items.rowX}}"   data-col="{{items.rowY}}" data-chooseflag="{{items.chooseFlag}}">
+                    <!-- <image src="/assets/seat_allow.png" mode="aspectFit" class="seat-image"/> -->
+                    <image src="/assets/seat.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 0}}"/>
+                    <image src="/assets/seat_allow.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 1 }}"/>
+                    <image src="/assets/seat_unallow.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 2 }}"/>
+                  </view>
+                </block>
+              </view>
+
+              <view class="rowX rowX-3">
+                <block wx:for="{{seats}}" wx:key="index" wx:for-item="items">
+                  <view class="seat-content-image" wx:if="{{items.rowX == 3}}" bind:tap="seatTap" data-row="{{items.rowX}}"   data-col="{{items.rowY}}" data-chooseflag="{{items.chooseFlag}}">
+                    <!-- <image src="/assets/seat_allow.png" mode="aspectFit" class="seat-image"/> -->
+                    <image src="/assets/seat.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 0}}"/>
+                    <image src="/assets/seat_allow.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 1 }}"/>
+                    <image src="/assets/seat_unallow.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 2 }}"/>
+                  </view>
+                </block>
+              </view>
+
+              <view class="rowX rowX-4">
+                <block wx:for="{{seats}}" wx:key="index" wx:for-item="items">
+                  <view class="seat-content-image" wx:if="{{items.rowX == 4}}" bind:tap="seatTap" data-row="{{items.rowX}}"   data-col="{{items.rowY}}" data-chooseflag="{{items.chooseFlag}}">
+                    <!-- <image src="/assets/seat_allow.png" mode="aspectFit" class="seat-image"/> -->
+                    <image src="/assets/seat.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 0}}"/>
+                    <image src="/assets/seat_allow.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 1 }}"/>
+                    <image src="/assets/seat_unallow.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 2 }}"/>
+                  </view>
+                </block>
+              </view>
+
+              <view class="rowX rowX-5">
+                <block wx:for="{{seats}}" wx:key="index" wx:for-item="items">
+                  <view class="seat-content-image" wx:if="{{items.rowX == 5}}" bind:tap="seatTap" data-row="{{items.rowX}}"   data-col="{{items.rowY}}" data-chooseflag="{{items.chooseFlag}}">
+                    <!-- <image src="/assets/seat_allow.png" mode="aspectFit" class="seat-image"/> -->
+                    <image src="/assets/seat.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 0}}"/>
+                    <image src="/assets/seat_allow.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 1 }}"/>
+                    <image src="/assets/seat_unallow.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 2 }}"/>
+                  </view>
+                </block>
+              </view>
+
+              <view class="rowX rowX-6">
+                <block wx:for="{{seats}}" wx:key="index" wx:for-item="items">
+                  <view class="seat-content-image" wx:if="{{items.rowX == 6}}" bind:tap="seatTap" data-row="{{items.rowX}}"   data-col="{{items.rowY}}" data-chooseflag="{{items.chooseFlag}}">
+                    <!-- <image src="/assets/seat_allow.png" mode="aspectFit" class="seat-image"/> -->
+                    <image src="/assets/seat.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 0}}"/>
+                    <image src="/assets/seat_allow.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 1 }}"/>
+                    <image src="/assets/seat_unallow.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 2 }}"/>
+                  </view>
+                </block>
+              </view>
+
+              <view class="rowX rowX-7">
+                <block wx:for="{{seats}}" wx:key="index" wx:for-item="items">
+                  <view class="seat-content-image" wx:if="{{items.rowX == 7}}" bind:tap="seatTap" data-row="{{items.rowX}}"   data-col="{{items.rowY}}" data-chooseflag="{{items.chooseFlag}}">
+                    <!-- <image src="/assets/seat_allow.png" mode="aspectFit" class="seat-image"/> -->
+                    <image src="/assets/seat.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 0}}"/>
+                    <image src="/assets/seat_allow.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 1 }}"/>
+                    <image src="/assets/seat_unallow.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 2 }}"/>
+                  </view>
+                </block>
+              </view>
+
+              <view class="rowX rowX-8">
+                <block wx:for="{{seats}}" wx:key="index" wx:for-item="items">
+                  <view class="seat-content-image" wx:if="{{items.rowX == 8}}" bind:tap="seatTap" data-row="{{items.rowX}}"   data-col="{{items.rowY}}" data-chooseflag="{{items.chooseFlag}}">
+                    <!-- <image src="/assets/seat_allow.png" mode="aspectFit" class="seat-image"/> -->
+                    <image src="/assets/seat.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 0}}"/>
+                    <image src="/assets/seat_allow.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 1 }}"/>
+                    <image src="/assets/seat_unallow.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 2 }}"/>
+                  </view>
+                </block>
+              </view>
+
+              <view class="rowX rowX-9">
+                <block wx:for="{{seats}}" wx:key="index" wx:for-item="items">
+                  <view class="seat-content-image" wx:if="{{items.rowX == 9}}" bind:tap="seatTap" data-row="{{items.rowX}}"   data-col="{{items.rowY}}" data-chooseflag="{{items.chooseFlag}}">
+                    <!-- <image src="/assets/seat_allow.png" mode="aspectFit" class="seat-image"/> -->
+                    <image src="/assets/seat.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 0}}"/>
+                    <image src="/assets/seat_allow.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 1 }}"/>
+                    <image src="/assets/seat_unallow.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 2 }}"/>
+                  </view>
+                </block>
+              </view>
+
+              <view class="rowX rowX-10">
+                <block wx:for="{{seats}}" wx:key="index" wx:for-item="items">
+                  <view class="seat-content-image" wx:if="{{items.rowX == 10}}" bind:tap="seatTap" data-row="{{items.rowX}}"   data-col="{{items.rowY}}" data-chooseflag="{{items.chooseFlag}}">
+                    <!-- <image src="/assets/seat_allow.png" mode="aspectFit" class="seat-image"/> -->
+                    <image src="/assets/seat.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 0}}"/>
+                    <image src="/assets/seat_allow.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 1 }}"/>
+                    <image src="/assets/seat_unallow.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 2 }}"/>
+                  </view>
+                </block>
+              </view>
+
+              <view class="rowX rowX-11">
+                <block wx:for="{{seats}}" wx:key="index" wx:for-item="items">
+                  <view class="seat-content-image" wx:if="{{items.rowX == 11}}" bind:tap="seatTap" data-row="{{items.rowX}}"   data-col="{{items.rowY}}" data-chooseflag="{{items.chooseFlag}}">
+                    <!-- <image src="/assets/seat_allow.png" mode="aspectFit" class="seat-image"/> -->
+                    <image src="/assets/seat.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 0}}"/>
+                    <image src="/assets/seat_allow.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 1 }}"/>
+                    <image src="/assets/seat_unallow.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 2 }}"/>
+                  </view>
+                </block>
+              </view>
+
+              <view class="rowX rowX-12">
+                <block wx:for="{{seats}}" wx:key="index" wx:for-item="items">
+                  <view class="seat-content-image" wx:if="{{items.rowX == 12}}" bind:tap="seatTap" data-row="{{items.rowX}}"   data-col="{{items.rowY}}" data-chooseflag="{{items.chooseFlag}}">
+                    <!-- <image src="/assets/seat_allow.png" mode="aspectFit" class="seat-image"/> -->
+                    <image src="/assets/seat.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 0}}"/>
+                    <image src="/assets/seat_allow.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 1 }}"/>
+                    <image src="/assets/seat_unallow.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 2 }}"/>
+                  </view>
+                </block>
+              </view>
+
+              <view class="rowX rowX-13">
+                <block wx:for="{{seats}}" wx:key="index" wx:for-item="items">
+                  <view class="seat-content-image" wx:if="{{items.rowX == 13}}" bind:tap="seatTap" data-row="{{items.rowX}}"   data-col="{{items.rowY}}" data-chooseflag="{{items.chooseFlag}}">
+                    <!-- <image src="/assets/seat_allow.png" mode="aspectFit" class="seat-image"/> -->
+                    <image src="/assets/seat.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 0}}"/>
+                    <image src="/assets/seat_allow.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 1 }}"/>
+                    <image src="/assets/seat_unallow.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 2 }}"/>
+                  </view>
+                </block>
+              </view>
+
+              <view class="rowX rowX-14">
+                <block wx:for="{{seats}}" wx:key="index" wx:for-item="items">
+                  <view class="seat-content-image" wx:if="{{items.rowX == 14}}" bind:tap="seatTap" data-row="{{items.rowX}}"   data-col="{{items.rowY}}" data-chooseflag="{{items.chooseFlag}}">
+                    <!-- <image src="/assets/seat_allow.png" mode="aspectFit" class="seat-image"/> -->
+                    <image src="/assets/seat.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 0}}"/>
+                    <image src="/assets/seat_allow.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 1 }}"/>
+                    <image src="/assets/seat_unallow.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 2 }}"/>
+                  </view>
+                </block>
+              </view>
+
+              <view class="rowX rowX-15">
+                <block wx:for="{{seats}}" wx:key="index" wx:for-item="items">
+                  <view class="seat-content-image" wx:if="{{items.rowX == 15}}" bind:tap="seatTap" data-row="{{items.rowX}}"   data-col="{{items.rowY}}" data-chooseflag="{{items.chooseFlag}}">
+                    <!-- <image src="/assets/seat_allow.png" mode="aspectFit" class="seat-image"/> -->
+                    <image src="/assets/seat.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 0}}"/>
+                    <image src="/assets/seat_allow.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 1 }}"/>
+                    <image src="/assets/seat_unallow.png" mode="aspectFit" class="seat-image" wx:if="{{items.chooseFlag == 2 }}"/>
+                  </view>
+                </block>
+              </view>
             </view>
           </movable-view>
         </movable-area>
+        <view class="seat-state">
+            <view>
+                <image src="/assets/seat.png" mode="aspectFit"/>
+                <text>座椅没人</text>
+            </view>
+            <view>
+                <image src="/assets/seat_unallow.png" mode="aspectFit"/>
+                <text>座椅有人</text>
+            </view>
+            <view>
+                <image src="/assets/seat_allow.png" mode="aspectFit"/>
+                <text>选中</text>
+            </view>
+        </view>
     </view>

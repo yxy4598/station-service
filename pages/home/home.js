@@ -10,10 +10,14 @@ Page({
     seats: []
   },
   handleCityEvent(e) {
-    console.log(e);
+    e.detail.seats.map((item) => {
+      item.chooseFlag = 0
+    })
+
     this.setData({
       seats: e.detail.seats
     })
+
   },
   
 

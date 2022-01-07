@@ -3,7 +3,8 @@
 import xyRequest from "../../service/index"
 import {
   uniqueFunc,
-  selectPartition
+  selectPartition,
+  selectTitle
 } from "../../utils/tools"
 Component({
   /**
@@ -177,11 +178,9 @@ Component({
               let seats = selectPartition(data, items[0].district)
               this.setData({
                 partition: partitions,
-                value4: partitions[0].value,
-
-                seats: seats
+                value4: partitions[0].value
               })
-              this.triggerEvent('cityEvent', {seats: this.data.seats})
+              this.triggerEvent('cityEvent', {seats: seats})
             }else {
               this.setData({
                 partition: {text: '待填充', value: 0},
@@ -204,17 +203,33 @@ Component({
               let partitions = items.map((item, index) => {
                 return Object.assign({}, {'text': item.district, value: item.id})
               })
+              let seats = selectPartition(data, items[0].district)
               this.setData({
                 partition: partitions,
-                value4: partitions[0].value
+                value4: partitions[0].value,
               })
+              this.triggerEvent('cityEvent', {seats: seats})
             }else {
               this.setData({
                 partition: {text: '待填充', value: 0},
-                value4: 0
+                value4: 0,
               })
             }
           })
+    },
+    handlePartition(e) {
+      const title = selectTitle(this.data.partition, e.detail)
+      xyRequest.get("/seat", {
+        stationId: this.data.value3
+      }).then(res => {
+        const data = res.data.data;
+        let seats = selectPartition(data, title)
+        console.log(seats);
+        // this.setData({
+        //   seats: seats
+        // })
+        this.triggerEvent('cityEvent', {seats: seats})
+      })
     }
   }
 })
