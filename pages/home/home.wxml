@@ -5,16 +5,16 @@
   <view class="swiper">
     <swiper autoplay 	interval="5000"	duration="1000" previous-margin="55rpx">
       <swiper-item>
-        <image src="/assets/swiper5.jpg"/>
+        <image src="https://nint.ltd/image/swiper2.jpg"/>
       </swiper-item>
       <swiper-item>
-        <image src="/assets/swiper2.jpg"/>
+        <image src="https://nint.ltd/image/swiper3.jpg"/>
       </swiper-item>
       <swiper-item>
-        <image src="/assets/swiper3.jpg"/>
+        <image src="https://nint.ltd/image/swiper4.jpg"/>
       </swiper-item>
       <swiper-item>
-        <image src="/assets/swiper4.jpg"/>
+        <image src="https://nint.ltd/image/swiper5.jpg"/>
       </swiper-item>
     </swiper>
   </view>

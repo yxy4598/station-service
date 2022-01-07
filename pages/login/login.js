@@ -1,38 +1,18 @@
-// pages/profile/profile.js
+// pages/login/login.js
 Page({
-  
+
   /**
    * 页面的初始数据
    */
   data: {
-    nickName: '',
-    avatarUrl: '',
-    isShowLogin: true
-  },
 
-  handleUserInfo() {
-    wx.getUserProfile({
-      desc:'展示数据',
-      success: (res) => {
-        console.log(res);
-        this.setData({
-          nickName: res.userInfo.nickName,
-          avatarUrl: res.userInfo.avatarUrl,
-          isShowLogin: false
-        })
-      }
-    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if(this.data.nickName == ''){
-      this.setData({
-        isShowLogin: true
-      })
-    }
+
   },
 
   /**
