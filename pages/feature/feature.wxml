@@ -1,0 +1,6 @@
+<!--pages/feature/feature.wxml-->
+
+<view class="seat">
+    <region-navbar bind:cityEvent="handleCityEvent"/>
+    <seat-area seats="{{seats}}"/>
+  </view>

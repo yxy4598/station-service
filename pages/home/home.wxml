@@ -2,10 +2,21 @@
 
 
 <view>
-
-  <view class="seat">
-    <region-navbar bind:cityEvent="handleCityEvent"/>
-    <seat-area seats="{{seats}}"/>
+  <view class="swiper">
+    <swiper autoplay 	interval="5000"	duration="1000" previous-margin="55rpx">
+      <swiper-item>
+        <image src="/assets/swiper5.jpg"/>
+      </swiper-item>
+      <swiper-item>
+        <image src="/assets/swiper2.jpg"/>
+      </swiper-item>
+      <swiper-item>
+        <image src="/assets/swiper3.jpg"/>
+      </swiper-item>
+      <swiper-item>
+        <image src="/assets/swiper4.jpg"/>
+      </swiper-item>
+    </swiper>
   </view>
 </view>
 

@@ -1,5 +1,4 @@
 // pages/home/home.js
-import xyRequest from "../../service/index"
 
 Page({
 
@@ -7,17 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    seats: []
-  },
-  handleCityEvent(e) {
-    e.detail.seats.map((item) => {
-      item.chooseFlag = 0
-    })
-
-    this.setData({
-      seats: e.detail.seats
-    })
-
+    
   },
   
 

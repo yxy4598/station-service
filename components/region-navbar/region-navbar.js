@@ -224,7 +224,7 @@ Component({
       }).then(res => {
         const data = res.data.data;
         let seats = selectPartition(data, title)
-        console.log(seats);
+        // console.log(seats);
         // this.setData({
         //   seats: seats
         // })

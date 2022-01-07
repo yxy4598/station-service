@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "region-navbar": "/components/region-navbar/region-navbar",
+    "seat-area": "/components/seat-area/seat-area"
+  },
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "功能",
+  "navigationBarTextStyle": "black"
+}
