@@ -1,10 +1,10 @@
 {
   "usingComponents": {
-    
+    "van-notice-bar": "@vant/weapp/notice-bar/index"
   },
   "backgroundTextStyle": "light",
   "navigationBarBackgroundColor": "#fff",
-  "navigationBarTitleText": "首页",
+  "navigationBarTitleText": "",
   "navigationBarTextStyle": "black"
   
 } 

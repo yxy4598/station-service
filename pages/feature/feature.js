@@ -5,17 +5,36 @@ Page({
    * 页面的初始数据
    */
   data: {
-    seats: []
+    seats: [],
+    activeKey: 0,
+    isSeat: true,
+    isToilet: false
   },
   handleCityEvent(e) {
     e.detail.seats.map((item) => {
       item.chooseFlag = 0
     })
-
     this.setData({
       seats: e.detail.seats
     })
+  },
 
+  handleSeat() {
+    this.setData({
+      isSeat: true,
+      isToilet: false,
+    })
+  },
+  handleToilet() {
+    this.setData({
+      isToilet: true,
+      isSeat: false
+    })
+  },
+  onChange(event) {
+    // Notify({ type: 'primary', message: event.detail });
+
+    console.log(event);
   },
   /**
    * 生命周期函数--监听页面加载

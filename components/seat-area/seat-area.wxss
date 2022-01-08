@@ -14,7 +14,7 @@
   line-height: 80rpx;
   background-color: #DCDCDC;
   border-radius: 0 0 20rpx 20rpx;
-  width: 750rpx;
+  width: 100%;
 }
 
 .row {
@@ -84,7 +84,7 @@ movable-area {
 }
 
 movable-view{
-  width: 1000rpx;
+  width: auto;
   position: static;
   height: 450rpx;
   background-color: transparent;

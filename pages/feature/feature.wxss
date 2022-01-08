@@ -1,1 +1,39 @@
 /* pages/feature/feature.wxss */
+
+.feature{
+  display: flex;
+}
+.label {
+  padding-top: 100rpx;
+  width: 17%;
+  z-index: 10;
+  background-color: #f7f8fa;
+}
+
+.label-son {
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+}
+
+.active {
+  background-color: #fff;
+  position:relative;
+}
+
+.active>text::before {
+  display: inline-block;
+  height: 60rpx;
+  width: 10rpx;
+  background-color: #1296db;
+  left: 100rpx;
+  content: '';
+  position:absolute;
+  left: 0rpx;
+  top: 30rpx;
+}
+
+.seat {
+  width: 83%;
+  height: 100%;
+}

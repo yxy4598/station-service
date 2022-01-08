@@ -1,7 +1,9 @@
 {
   "usingComponents": {
     "region-navbar": "/components/region-navbar/region-navbar",
-    "seat-area": "/components/seat-area/seat-area"
+    "seat-area": "/components/seat-area/seat-area",
+    "van-sidebar": "@vant/weapp/sidebar/index",
+    "van-sidebar-item": "@vant/weapp/sidebar-item/index"
   },
   "backgroundTextStyle": "light",
   "navigationBarBackgroundColor": "#fff",

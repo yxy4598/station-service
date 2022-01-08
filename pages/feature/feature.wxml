@@ -1,6 +1,25 @@
 <!--pages/feature/feature.wxml-->
 
-<view class="seat">
-    <region-navbar bind:cityEvent="handleCityEvent"/>
-    <seat-area seats="{{seats}}"/>
-  </view>
+
+<view class="feature">
+
+    <view class="label" >
+        <view class="label-son {{isSeat?'active':''}}" bind:tap="handleSeat">
+            <!-- <view class="active-span"></view> -->
+            <text>座位</text>
+        </view>
+        <view class="label-son {{isToilet?'active':''}}" bind:tap="handleToilet">
+            <text>厕所</text>
+        </view>
+    </view>
+
+    <view class="seat" wx:if="{{isSeat}}">
+        <region-navbar bind:cityEvent="handleCityEvent"/>
+        <seat-area seats="{{seats}}"/>
+    </view>
+
+    <view class="seat" wx:if="{{isToilet}}">
+        <region-navbar bind:cityEvent="handleCityEvent"/>
+        <seat-area seats="{{seats}}"/>
+    </view>
+</view>

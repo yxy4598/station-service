@@ -92,15 +92,15 @@ Component({
       })
     },
     getHeight() {
-      let that = this;
-        var query = wx.createSelectorQuery();
-        query.select('.box').boundingClientRect()
-        query.exec(function (res) {
-            let height = res[0].height
-            that.setData({
-                height: height
-            })
-        })
+      // let that = this;
+      //   var query = wx.createSelectorQuery();
+      //   query.select('.box').boundingClientRect()
+      //   query.exec(function (res) {
+      //       let height = res[0].height
+      //       that.setData({
+      //           height: height
+      //       })
+      //   })
 
         // console.log(this.data.height);
     }

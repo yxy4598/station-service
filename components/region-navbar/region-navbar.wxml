@@ -1,9 +1,9 @@
 <!--components/region-navbar.wxml-->
 <view class="seat-nav">
-      <van-dropdown-menu active-color="#1296db">
-        <van-dropdown-item value="{{ value1 }}" options="{{ province }}" bind:change="handleProvince"/>
-        <van-dropdown-item value="{{ value2 }}" options="{{ city }}" bind:change="handleCity"/>
-        <van-dropdown-item value="{{ value3 }}" options="{{ station }}" bind:change="handleStation"/>
-        <van-dropdown-item value="{{ value4 }}" options="{{ partition }}" title="{{partition.text}}" bind:change="handlePartition"/>
+      <van-dropdown-menu active-color="#1296db" >
+        <van-dropdown-item value="{{ value1 }}" options="{{ province }}" bind:change="handleProvince" popup-style="left: 126rpx;" title-class="xy-menu"/>
+        <van-dropdown-item value="{{ value2 }}" options="{{ city }}" bind:change="handleCity" popup-style="left: 126rpx;"/>
+        <van-dropdown-item value="{{ value3 }}" options="{{ station }}" bind:change="handleStation" popup-style="left: 126rpx;"/>
+        <van-dropdown-item value="{{ value4 }}" options="{{ partition }}" title="{{partition.text}}" bind:change="handlePartition" popup-style="left: 126rpx;"/>
       </van-dropdown-menu>
     </view>
