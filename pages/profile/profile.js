@@ -7,9 +7,26 @@ Page({
   data: {
     nickName: '',
     avatarUrl: '',
-    isShowLogin: true
+    isShowLogin: true,
+    show: false
   },
 
+  //显示弹窗
+  showPopup(e) {
+    if(this.data.nickName !== '') {
+      this.setData({ show: true });
+    }else {
+      this.handleUserInfo();
+    }
+  },
+
+  //关闭弹窗
+  onClose() {
+    this.setData({ show: false });
+  },
+
+
+  //登陆信息
   handleUserInfo() {
     wx.getUserProfile({
       desc:'展示数据',

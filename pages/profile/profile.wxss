@@ -47,7 +47,15 @@
   color: #9D9D9D;
 }
 
+.repast {
+  border-bottom: 30rpx solid #f6f6f6;
+}
 
-.repast>view {
-  height: 150rpx;
+.repast_cell, .other_cell {
+  height: 120rpx;
+  align-items: center;
+  border-bottom: 3rpx solid #f6f6f6;
+}
+.repast_title , .other_title{
+  font-size: 30rpx;
 }

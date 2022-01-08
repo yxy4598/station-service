@@ -20,7 +20,24 @@
 
 
 <view class="repast">
-    <van-cell title="餐饮订单" is-link  inset clickable/>
+    <van-cell  custom-class="repast_cell" title-class="repast_title" title="餐饮订单" is-link  inset clickable bind:click="showPopup"/>
+    <van-popup
+    show="{{ show }}"
+    closeable
+    position="bottom"
+    custom-style="height: 60%"
+    bind:close="onClose"
+    >
 
+    </van-popup>
 </view>
+
+<view class="otherInfo">
+    <van-cell  custom-class="other_cell" title-class="other_title" title="物品丢失查询" is-link  inset clickable value="失物查找"/>
+    <van-cell  custom-class="other_cell" title-class="other_title" title="客服" is-link  inset clickable/>
+    <van-cell  custom-class="other_cell" title-class="other_title" title="更多服务" is-link  inset clickable value="投诉建议"/>
+</view>
+
+
+
 
