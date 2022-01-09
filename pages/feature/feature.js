@@ -1,5 +1,8 @@
+const App = getApp();
+
 // pages/feature/feature.js
 Page({
+  
 
   /**
    * 页面的初始数据
@@ -10,6 +13,7 @@ Page({
     activeKey: 0,
     isSeat: true,
     isToilet: false,
+    winHeight: App.globalData.windowHeight-46,
 
     stationName: ""
   },

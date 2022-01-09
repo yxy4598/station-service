@@ -1,8 +1,7 @@
 <!--pages/feature/feature.wxml-->
 
 
-<view class="feature">
-
+<view class="feature" style='height:{{winHeight}}px'>
     <view class="label" >
         <view class="label-son {{isSeat?'active':''}}" bind:tap="handleSeat">
             <!-- <view class="active-span"></view> -->

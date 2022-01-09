@@ -3,6 +3,7 @@
   position: relative;
   background-color: #F0F0F0;
   padding-bottom: 30rpx;
+  height: 100%;
 }
 
 .toilet-title {
