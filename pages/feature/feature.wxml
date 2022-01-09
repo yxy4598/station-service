@@ -14,12 +14,12 @@
     </view>
 
     <view class="seat" wx:if="{{isSeat}}">
-        <region-navbar bind:cityEvent="handleCityEvent"/>
+        <region-navbar bind:cityEvent="handleCityEvent" provinceEvent="handleProvince" cityEvent="handleCity" stationEvent="handleStation" partitionEvent="handlePartition" isSeat="{{isSeat}}"/>
         <seat-area seats="{{seats}}"/>
     </view>
 
-    <view class="seat" wx:if="{{isToilet}}">
-        <region-navbar bind:cityEvent="handleCityEvent"/>
-        <seat-area seats="{{seats}}"/>
+    <view class="toilet" wx:if="{{isToilet}}">
+        <region-navbar bind:cityToiletEvent="handleToiletEvent" provinceEvent="handleToiletProvince" cityEvent="handleToiletCity" stationEvent="handleToiletStation" partitionEvent="handleToiletPartition" isToilet="{{isToilet}}"/>
+        <toilet-area toilet="{{toilet}}" stationName="{{stationName}}"/>
     </view>
 </view>

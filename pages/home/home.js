@@ -22,24 +22,24 @@ Page({
       nbBackgroundColor: '#000000',
     })
 
-    // wx.getLocation({
-    //   altitude: 'true',
-    //   isHighAccuracy: 'true',
-    //   success: res => {
-    //     console.log(res);
-    //     wx.request({
-    //       url: 'http://nint.ltd:8531/station/search',
-    //       data: {
-    //         longitude: res.longitude,
-    //         latitude: res.latitude,
-    //         num: 2
-    //       },
-    //       success: res => {
-    //         console.log(res);
-    //       }
-    //     })
-    //   }
-    // })
+    wx.getLocation({
+      altitude: 'true',
+      isHighAccuracy: 'true',
+      success: res => {
+        console.log(res);
+        wx.request({
+          url: 'https://nint.ltd/api/station/lal',
+          data: {
+            longitude: res.longitude,
+            latitude: res.latitude,
+            num: 2
+          },
+          success: res => {
+            console.log(res);
+          }
+        })
+      }
+    })
 
 
   }

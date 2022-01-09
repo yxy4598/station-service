@@ -6,11 +6,15 @@ Page({
    */
   data: {
     seats: [],
+    toilet: [],
     activeKey: 0,
     isSeat: true,
-    isToilet: false
+    isToilet: false,
+
+    stationName: ""
   },
   handleCityEvent(e) {
+    // console.log(e);
     e.detail.seats.map((item) => {
       item.chooseFlag = 0
     })
@@ -19,11 +23,25 @@ Page({
     })
   },
 
+  handleToiletEvent(e) {
+    if(e.detail.toilet) {
+      e.detail.toilet.map((item) => {
+        item.chooseFlag = 1
+      })
+    }
+    
+    this.setData({
+      toilet: e.detail.toilet,
+      stationName: e.detail.stationName
+    })
+  },
+
   handleSeat() {
     this.setData({
       isSeat: true,
       isToilet: false,
     })
+
   },
   handleToilet() {
     this.setData({

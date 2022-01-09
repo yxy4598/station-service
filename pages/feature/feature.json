@@ -2,6 +2,8 @@
   "usingComponents": {
     "region-navbar": "/components/region-navbar/region-navbar",
     "seat-area": "/components/seat-area/seat-area",
+    "toilet-area": "/components/toilet-area/toilet-area",
+
     "van-sidebar": "@vant/weapp/sidebar/index",
     "van-sidebar-item": "@vant/weapp/sidebar-item/index"
   },

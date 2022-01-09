@@ -95,7 +95,6 @@ movable-view{
 } */
 
 .scale-view {
-  
   padding: 0 40rpx 0 60rpx;
 }
 

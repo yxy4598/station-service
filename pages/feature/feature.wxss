@@ -33,7 +33,7 @@
   top: 30rpx;
 }
 
-.seat {
+.seat , .toilet{
   width: 83%;
   height: 100%;
 }

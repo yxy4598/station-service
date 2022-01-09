@@ -1,0 +1,68 @@
+/* components/toilet-area/toilet-area.wxss */
+.toilet-area {
+  position: relative;
+  background-color: #F0F0F0;
+  padding-bottom: 30rpx;
+}
+
+.toilet-title {
+  height: 80rpx;
+  text-align: center;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  background-color: #DCDCDC;
+  border-radius: 0 0 20rpx 20rpx;
+  width: 100%;
+}
+
+movable-area {
+  width: auto;
+  height: 845rpx;
+  background-color: transparent;
+}
+
+movable-view{
+  width: auto;
+  position: static;
+  height: 450rpx;
+  background-color: transparent;
+  margin-top: 240rpx;
+}
+
+.scale-view {
+  padding: 0 40rpx 0 60rpx;
+}
+
+.toilet-content-image{
+  position: relative;
+  width: 60rpx;
+  height: 60rpx;
+  padding: 7rpx 1rpx;
+}
+
+.toilet-image{
+  position: absolute;
+  width: 60rpx;
+  height: 60rpx;
+}
+
+
+.toilet-state {
+  display: flex;
+  font-size: 32rpx;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rpx;
+}
+.toilet-state image {
+    width: 60rpx;
+    height: 54rpx;
+    margin-right: 8rpx;
+}
+
+.toilet-state>view {
+    margin: 0 20rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

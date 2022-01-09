@@ -1,0 +1,74 @@
+<!--components/toilet-area/toilet-area.wxml-->
+
+<view class="toilet-area">
+  <view class="toilet-title">{{stationName}}智慧厕所</view>
+
+  <movable-area scale-area class="scale-area">
+    <movable-view 
+      class="scale-view"
+      direction="horizontal"
+      out-of-bounds
+      friction="1"
+      scale="true"
+      scale-max="1.5"
+      scale-min="1"
+      animation
+      bindscale="handleSeatScale"
+      bindchange="handleSeatChange"
+      scale-value="{{scaleValue}}"
+    >
+      <view>
+        <view class="rowX rowX-1">
+          <block wx:for="{{toilet}}" wx:key="index" wx:for-item="items">
+            <view class="toilet-content-image" wx:if="{{items.rowX == 1}}" bind:tap="toiletTap" data-row="{{items.rowX}}"   data-col="{{items.rowY}}" data-chooseflag="{{items.chooseFlag}}">
+              <image src="/assets/toilet_allow.png" mode="aspectFit" class="toilet-image" wx:if="{{items.chooseFlag == 1 }}"/>
+              <image src="/assets/toilet_unallow.png" mode="aspectFit" class="toilet-image" wx:if="{{items.chooseFlag == 2 }}"/>
+            </view>
+          </block>
+        </view>
+        <view class="rowX rowX-2">
+          <block wx:for="{{toilet}}" wx:key="index" wx:for-item="items">
+            <view class="toilet-content-image" wx:if="{{items.rowX == 2}}" bind:tap="toiletTap" data-row="{{items.rowX}}"   data-col="{{items.rowY}}" data-chooseflag="{{items.chooseFlag}}">
+              <image src="/assets/toilet_allow.png" mode="aspectFit" class="toilet-image" wx:if="{{items.chooseFlag == 1 }}"/>
+              <image src="/assets/toilet_unallow.png" mode="aspectFit" class="toilet-image" wx:if="{{items.chooseFlag == 2 }}"/>
+            </view>
+          </block>
+        </view>
+        <view class="rowX rowX-3">
+          <block wx:for="{{toilet}}" wx:key="index" wx:for-item="items">
+            <view class="toilet-content-image" wx:if="{{items.rowX == 3}}" bind:tap="toiletTap" data-row="{{items.rowX}}"   data-col="{{items.rowY}}" data-chooseflag="{{items.chooseFlag}}">
+              <image src="/assets/toilet_allow.png" mode="aspectFit" class="toilet-image" wx:if="{{items.chooseFlag == 1 }}"/>
+              <image src="/assets/toilet_unallow.png" mode="aspectFit" class="toilet-image" wx:if="{{items.chooseFlag == 2 }}"/>
+            </view>
+          </block>
+        </view>
+        <view class="rowX rowX-4">
+          <block wx:for="{{toilet}}" wx:key="index" wx:for-item="items">
+            <view class="toilet-content-image" wx:if="{{items.rowX == 4}}" bind:tap="toiletTap" data-row="{{items.rowX}}"   data-col="{{items.rowY}}" data-chooseflag="{{items.chooseFlag}}">
+              <image src="/assets/toilet_allow.png" mode="aspectFit" class="toilet-image" wx:if="{{items.chooseFlag == 1 }}"/>
+              <image src="/assets/toilet_unallow.png" mode="aspectFit" class="toilet-image" wx:if="{{items.chooseFlag == 2 }}"/>
+            </view>
+          </block>
+        </view>
+        <view class="rowX rowX-5">
+          <block wx:for="{{toilet}}" wx:key="index" wx:for-item="items">
+            <view class="toilet-content-image" wx:if="{{items.rowX == 5}}" bind:tap="toiletTap" data-row="{{items.rowX}}"   data-col="{{items.rowY}}" data-chooseflag="{{items.chooseFlag}}">
+              <image src="/assets/toilet_allow.png" mode="aspectFit" class="toilet-image" wx:if="{{items.chooseFlag == 1 }}"/>
+              <image src="/assets/toilet_unallow.png" mode="aspectFit" class="toilet-image" wx:if="{{items.chooseFlag == 2 }}"/>
+            </view>
+          </block>
+        </view>
+      </view>
+    </movable-view>
+  </movable-area>
+  <view class="toilet-state">
+    <view>
+        <image src="/assets/toilet_unallow.png" mode="aspectFit"/>
+        <view>使用中</view>
+    </view>
+    <view>
+        <image src="/assets/toilet_allow.png" mode="aspectFit"/>
+        <view>空闲</view>
+    </view>
+  </view>
+</view>
